@@ -1,0 +1,26 @@
+{
+  "name": "webscrapper-drive-api",
+  "version": "1.0.0",
+  "description": "Webscrapper and google drive api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "author": "AJ Castiglione",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.3",
+    "firebase": "^5.4.2",
+    "googleapis": "^27.0.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "mongodb": "^3.1.3",
+    "mongoose": "^5.2.9",
+    "request": "^2.88.0",
+    "validator": "^10.7.0"
+  }
+}
