@@ -35,6 +35,7 @@ let UserSchema = new mongoose.Schema({
   ]
 });
 
+// Protecting routes by logged in sessions
 UserSchema.statics.findByToken = function(token) {
   let User = this;
   let decoded;
