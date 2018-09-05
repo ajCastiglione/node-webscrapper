@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 // Sign up new user
 app.post("/signup", (req, res) => {
-  let body = _.pick(req.body, ["email", "password"]);
+  let body = _.pick(req.body, ["email", "password", "username"]);
   let user = new User(body);
 
   user
@@ -41,9 +41,9 @@ app.post("/signup", (req, res) => {
 
 // Login existing user
 app.post("/users/login", (req, res) => {
-  let body = _.pick(req.body, ["email", "password"]);
+  let body = _.pick(req.body, ["username", "password"]);
 
-  User.findByCredentials(body.email, body.password)
+  User.findByCredentials(body.username, body.password)
     .then(user => {
       return user
         .generateAuthToken()

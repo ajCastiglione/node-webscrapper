@@ -16,6 +16,12 @@ let UserSchema = new mongoose.Schema({
       message: "Email is not valid"
     }
   },
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+    minlength: 5
+  },
   password: {
     type: String,
     required: true,
@@ -69,10 +75,10 @@ UserSchema.methods.generateAuthToken = function() {
 };
 
 // Login existing user
-UserSchema.statics.findByCredentials = function(email, password) {
+UserSchema.statics.findByCredentials = function(username, password) {
   let User = this;
 
-  return User.findOne({ email }).then(user => {
+  return User.findOne({ username }).then(user => {
     if (!user) {
       return Promise.reject();
     }
